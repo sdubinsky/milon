@@ -2,9 +2,20 @@ require "./prefixes_suffixes"
 module DefaultVerb
   def self.generate_exception_regexes
     {
-      /^ל(..)ו(.)$/ => {tense: :infinitive, person: :nonspecific, number: "both singular and plural", binyan: "shem hapoal", gender: :neuter, part: :verb},
+      
       /^(..)ו(.)$/ => {part: :adjective}
     }
+  end
+
+  def self.generate_shem_hapoel_regexes
+    regexes = {
+      /^ל(..)ו(.)$/ => {binyan: :paal},
+      /^להי(...)$/ => {binyan: :nifal},
+      /^ל(...)$/ => {binyan: :piel},
+      /^להת(...)$/ => {binyan: :hitpael},
+      /^לה(...)$/ => {binyan: :hifil}
+    }
+    return PrefixesSuffixes.generate_shem_hapoel_regexes regexes
   end
 
   def self.generate_future_regexes
@@ -40,11 +51,12 @@ module DefaultVerb
   end
 
   def self.regex_dictionary
-  regexes = {}
-  regexes.merge! generate_past_regexes
-  regexes.merge! generate_present_regexes
-  regexes.merge! generate_future_regexes
-  regexes.merge! generate_exception_regexes
-  return regexes
-end
+    regexes = {}
+    regexes.merge! generate_shem_hapoel_regexes
+    regexes.merge! generate_past_regexes
+    regexes.merge! generate_present_regexes
+    regexes.merge! generate_future_regexes
+    regexes.merge! generate_exception_regexes
+    return regexes
+  end
 end

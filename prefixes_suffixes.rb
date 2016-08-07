@@ -52,4 +52,14 @@ module PrefixesSuffixes
     end
     return regexes
   end
+
+  def self.generate_shem_hapoel_regexes binyanim
+    form = {tense: :infinitive, person: :nonspecific, number: "both singular and plural", gender: :neuter, part: :verb}
+
+    regexes = {}
+    binyanim.each_pair do |regex, binyan|
+      regexes.merge!({regex => binyan.merge(form)})
+    end
+    return regexes
+  end
 end
