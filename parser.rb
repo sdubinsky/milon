@@ -49,7 +49,6 @@ module Parser
   end
 
   def self.fix_endings root
-    puts root
     sofim_dict = {
       'פ' => 'ף',
       'כ' => 'ך',
