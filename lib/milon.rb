@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-require './regex'
+require './lib/regex'
 module Parser
 
 

@@ -1,4 +1,4 @@
 #!/usr/bin/ruby
-require './lib/parser'
+require 'milon'
 
-puts Parser.translate ARGV[0]
+puts Milon.translate ARGV[0]

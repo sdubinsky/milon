@@ -1,4 +1,4 @@
-require './prefixes_suffixes'
+require './lib/prefixes_suffixes'
 module LamedHeh
   def self.generate_exception_regexes
     
