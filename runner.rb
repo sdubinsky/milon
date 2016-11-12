@@ -1,4 +1,4 @@
 #!/usr/bin/ruby
-require './parser'
+require './lib/parser'
 
 puts Parser.translate ARGV[0]
