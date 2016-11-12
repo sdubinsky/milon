@@ -21,20 +21,22 @@ module DefaultVerb
   def self.generate_future_regexes
     binyanim = {
       paal: '(.)ו(..)',
-      piel: '(...)'
+      nifal: 'נ(.)ו(..)',
+      piel: '(...)',
     }
     return PrefixesSuffixes.generate_future_regexes binyanim
   end
 
   def self.generate_past_regexes
-    binyanim ={ paal: /(...)/,
-                nifal: /נ(...)/,
-                piel: /(.)י(..)/,
-                paul: /(..)ו(.)/,
-                hifil: /ה(..)י(.)/,
-                hufal: /הו(...)/,
-                hitpael: /הת(...)/
-              }
+    binyanim = {
+      paal: /(...)/,
+      nifal: /נ(...)/,
+      piel: /(.)י(..)/,
+      paul: /(..)ו(.)/,
+      hifil: /ה(..)י(.)/,
+      hufal: /הו(...)/,
+      hitpael: /הת(...)/
+    }
     regexes = PrefixesSuffixes.generate_past_regexes binyanim
     return regexes
   end
