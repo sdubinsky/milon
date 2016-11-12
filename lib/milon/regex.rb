@@ -1,4 +1,4 @@
-require './lib/default_verb'
+require_relative './default_verb'
 module Regex
   def self.regex_dictionary
     regexes = {}

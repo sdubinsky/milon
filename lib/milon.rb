@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-require './lib/regex'
+require_relative 'milon/regex'
 module Milon
 
 
