@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 require './lib/regex'
-module Parser
+module Milon
 
 
   def self.binyan_definitions

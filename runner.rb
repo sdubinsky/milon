@@ -1,4 +1,4 @@
 #!/usr/bin/ruby
-require 'milon'
+require './lib/milon'
 
 puts Milon.translate ARGV[0]
